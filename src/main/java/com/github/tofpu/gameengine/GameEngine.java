@@ -53,5 +53,5 @@ public class GameEngine {
         return gameInfo.gameSession;
     }
 
-    private record GameInfo(GameSession gameSession, GamePlayerSession gamePlayerSession) {}
+    protected record GameInfo(GameSession gameSession, GamePlayerSession gamePlayerSession) {}
 }
