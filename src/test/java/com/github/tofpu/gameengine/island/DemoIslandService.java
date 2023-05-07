@@ -1,12 +1,9 @@
-package io.github.tofpu.gameengine.island;
-
-import io.github.tofpu.gameengine.island.Island;
-import io.github.tofpu.gameengine.island.IslandService;
+package com.github.tofpu.gameengine.island;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import static io.tofpu.gameengine.util.ProgramCorrectnessHelper.requireState;
+import static com.github.tofpu.gameengine.util.ProgramCorrectnessHelper.requireState;
 
 public class DemoIslandService implements IslandService {
     private final Map<Integer, Island> islandMap = new HashMap<>();

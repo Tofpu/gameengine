@@ -1,4 +1,4 @@
-package io.github.tofpu.gameengine.island.arena.land;
+package com.github.tofpu.gameengine.island.arena.land;
 
 public class ArenaLand {
     private final Position position;

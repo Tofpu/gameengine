@@ -1,4 +1,4 @@
-package io.github.tofpu.gameengine.island;
+package com.github.tofpu.gameengine.island;
 
 public class DemoIsland implements Island {
     private final int slot;

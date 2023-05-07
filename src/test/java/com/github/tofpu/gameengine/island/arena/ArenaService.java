@@ -1,7 +1,7 @@
-package io.github.tofpu.gameengine.island.arena;
+package com.github.tofpu.gameengine.island.arena;
 
-import io.github.tofpu.gameengine.island.arena.land.Position;
-import io.github.tofpu.gameengine.island.arena.land.ArenaLand;
+import com.github.tofpu.gameengine.island.arena.land.Position;
+import com.github.tofpu.gameengine.island.arena.land.ArenaLand;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.function.Supplier;
 
-import static io.tofpu.gameengine.util.ProgramCorrectnessHelper.requireState;
+import static com.github.tofpu.gameengine.util.ProgramCorrectnessHelper.requireState;
 
 public class ArenaService {
     private final Map<Object, ArenaLand> arenaMap = new HashMap<>();

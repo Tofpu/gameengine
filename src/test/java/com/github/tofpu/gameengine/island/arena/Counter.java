@@ -1,4 +1,4 @@
-package io.github.tofpu.gameengine.island.arena;
+package com.github.tofpu.gameengine.island.arena;
 
 import java.util.Arrays;
 import java.util.concurrent.atomic.AtomicInteger;

@@ -1,4 +1,4 @@
-package io.tofpu.gameengine.util;
+package com.github.tofpu.gameengine.util;
 
 import org.jetbrains.annotations.Nullable;
 

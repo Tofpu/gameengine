@@ -1,4 +1,4 @@
-package io.tofpu.gameengine;
+package com.github.tofpu.gameengine;
 
 import java.util.UUID;
 

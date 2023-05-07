@@ -1,8 +1,9 @@
 plugins {
-    id("java")
+    java
+    `maven-publish`
 }
 
-group = "io.github.tofpu"
+group = "com.github.tofpu"
 version = "1.0-SNAPSHOT"
 
 repositories {

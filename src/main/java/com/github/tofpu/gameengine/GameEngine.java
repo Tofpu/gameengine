@@ -1,6 +1,6 @@
-package io.tofpu.gameengine;
+package com.github.tofpu.gameengine;
 
-import io.tofpu.gameengine.util.ProgramCorrectnessHelper;
+import com.github.tofpu.gameengine.util.ProgramCorrectnessHelper;
 
 import java.util.HashMap;
 import java.util.Map;

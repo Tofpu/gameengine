@@ -1,6 +1,4 @@
-package io.github.tofpu.gameengine;
-
-import io.tofpu.gameengine.GamePlayerSession;
+package com.github.tofpu.gameengine;
 
 import java.util.UUID;
 

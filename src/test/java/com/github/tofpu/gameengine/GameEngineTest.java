@@ -1,19 +1,17 @@
-package io.github.tofpu.gameengine;
+package com.github.tofpu.gameengine;
 
-import io.github.tofpu.gameengine.island.DemoIsland;
-import io.github.tofpu.gameengine.island.DemoIslandService;
-import io.github.tofpu.gameengine.island.Island;
-import io.github.tofpu.gameengine.island.IslandService;
-import io.github.tofpu.gameengine.island.arena.ArenaService;
-import io.tofpu.gameengine.GameEngine;
-import io.tofpu.gameengine.GameSession;
+import com.github.tofpu.gameengine.island.DemoIsland;
+import com.github.tofpu.gameengine.island.DemoIslandService;
+import com.github.tofpu.gameengine.island.Island;
+import com.github.tofpu.gameengine.island.IslandService;
+import com.github.tofpu.gameengine.island.arena.ArenaService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
 import java.util.UUID;
 
-import static io.tofpu.gameengine.util.ProgramCorrectnessHelper.requireArgument;
+import static com.github.tofpu.gameengine.util.ProgramCorrectnessHelper.requireArgument;
 
 public class GameEngineTest {
     @Test
