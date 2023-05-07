@@ -6,34 +6,34 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
 import java.util.function.BiConsumer;
-import java.util.function.Function;
+import java.util.function.BiFunction;
 
 public class GameEngine {
 
-    public static GameEngine create(Function<UUID, GamePlayerSession> playerSessionFunction, Function<UUID, GameSession> gameSessionFunction, BiConsumer<GameSession, GamePlayerSession> onStartConsumer, BiConsumer<GameSession, GamePlayerSession> onEndConsumer) {
+    public static GameEngine create(BiFunction<UUID, Object[], GamePlayerSession> playerSessionFunction, BiFunction<UUID, Object[], GameSession> gameSessionFunction, BiConsumer<GameSession, GamePlayerSession> onStartConsumer, BiConsumer<GameSession, GamePlayerSession> onEndConsumer) {
         return new GameEngine(playerSessionFunction, gameSessionFunction, onStartConsumer, onEndConsumer);
     }
 
-    private final Function<UUID, GamePlayerSession> playerSessionFunction;
-    private final Function<UUID, GameSession> gameSessionFunction;
+    private final BiFunction<UUID, Object[], GamePlayerSession> playerSessionFunction;
+    private final BiFunction<UUID, Object[], GameSession> gameSessionFunction;
     private final BiConsumer<GameSession, GamePlayerSession> onStartConsumer;
 
     private final BiConsumer<GameSession, GamePlayerSession> onEndConsumer;
 
     private final Map<UUID, GameInfo> gameInfoMap = new HashMap<>();
 
-    public GameEngine(Function<UUID, GamePlayerSession> playerSessionFunction, Function<UUID, GameSession> gameSessionFunction, BiConsumer<GameSession, GamePlayerSession> onStartConsumer, BiConsumer<GameSession, GamePlayerSession> onEndConsumer) {
+    public GameEngine(BiFunction<UUID, Object[], GamePlayerSession> playerSessionFunction, BiFunction<UUID, Object[], GameSession> gameSessionFunction, BiConsumer<GameSession, GamePlayerSession> onStartConsumer, BiConsumer<GameSession, GamePlayerSession> onEndConsumer) {
         this.playerSessionFunction = playerSessionFunction;
         this.gameSessionFunction = gameSessionFunction;
         this.onStartConsumer = onStartConsumer;
         this.onEndConsumer = onEndConsumer;
     }
 
-    public GameSession begin(final UUID playerId) {
+    public GameSession begin(UUID playerId, Object... data) {
         ProgramCorrectnessHelper.requireState(!isPlaying(playerId), "Player %s is already in a game", playerId);
 
-        GameSession gameSession = gameSessionFunction.apply(playerId);
-        GamePlayerSession playerSession = playerSessionFunction.apply(playerId);
+        GameSession gameSession = gameSessionFunction.apply(playerId, data);
+        GamePlayerSession playerSession = playerSessionFunction.apply(playerId, data);
 
         onStartConsumer.accept(gameSession, playerSession);
 

@@ -49,7 +49,7 @@ public class ArenaService {
         if (!this.unreservedQueue.isEmpty()) {
             position = this.unreservedQueue.poll();
         } else {
-            int x = xCounter.incrementBy(obj.width(), landGapSupplier.get());
+            int x = xCounter.incrementBy(obj.getWidth(), landGapSupplier.get());
             position = new Position(x, 0, 0);
         }
 
@@ -59,7 +59,7 @@ public class ArenaService {
         return arenaLand;
     }
 
-    public boolean isReserved(final Object obj) {
+    public boolean isReserved(final SizeableObject obj) {
         return this.arenaMap.containsKey(obj);
     }
 }

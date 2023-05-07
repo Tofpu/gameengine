@@ -11,4 +11,11 @@ public class ProgramCorrectnessHelper {
             throw new IllegalStateException(String.format(US, template, args));
         }
     }
+
+    /** Ensures that the argument expression is true. */
+    public static void requireArgument(boolean expression, String template, @Nullable Object... args) {
+        if (!expression) {
+            throw new IllegalArgumentException(String.format(US, template, args));
+        }
+    }
 }
